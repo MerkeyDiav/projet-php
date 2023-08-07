@@ -15,7 +15,7 @@
         <div class="forms-container">
             <div class="signin-signup">
                 <form action="conf.php" class="sign-in-form" >
-                    <h2 class="title">Sign in</h2>
+                    <h2 class="title">Se connecter</h2>
                     <div class="input-field">
                         <i class="fa fa-user"></i>
                         <input type="text" placeholder="Nom d'utilisateur">
@@ -26,7 +26,7 @@
                     </div>
                     <input type="submit" value="Login" class="btn solid">
 
-                    <p class="social-text">or sign in with social platforms</p>
+                    <p class="social-text">ou inscrivez-vous sur les plateformes sociales</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook"></i>
@@ -44,7 +44,7 @@
                 </form>
 
                 <form action="" class="sign-up-form">
-                    <h2 class="title">Sign up</h2>
+                    <h2 class="title">S'inscrire</h2>
                     <div class="input-field">
                         <i class="fa fa-user"></i>
                         <input type="text" placeholder="Nom d'utilisateur">
@@ -59,7 +59,7 @@
                     </div>
                     <input type="submit" value="Sign up" class="btn solid">
 
-                    <p class="social-text">or sign up with social platforms</p>
+                    <p class="social-text">ou inscrivez-vous sur les plateformes sociales </p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook"></i>
@@ -81,7 +81,7 @@
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">
-                    <h3>New here ?</h3>
+                    <h3>Nouveau ici ?</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                         Illum architecto neque rerum.</p>
                         <button class="btn transparent" id="sign-up-btn">Sign up</button>
@@ -91,10 +91,10 @@
             
             <div class="panel right-panel">
                 <div class="content">
-                    <h3>One of us ?</h3>
+                    <h3>Vous avez un compte ?</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                         Illum architecto neque rerum.</p>
-                        <button class="btn transparent" id="sign-in-btn">Sign in</button>
+                        <button class="btn transparent" id="sign-in-btn">Se connecter </button>
                 </div>
                 <img src="images/play.svg" alt="" class="image">
             </div>
