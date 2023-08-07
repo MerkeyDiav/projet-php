@@ -24,9 +24,9 @@
                         <i class="fa fa-lock"></i>
                         <input type="password" placeholder="Mot de passe ">
                     </div>
-                    <input type="submit" value="Login" class="btn solid">
+                    <input type="submit" value="Valider" class="btn solid">
 
-                    <p class="social-text">ou inscrivez-vous sur les plateformes sociales</p>
+                    <p class="social-text">Inscrivez-vous sur les plateformes sociales</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook"></i>
@@ -57,9 +57,9 @@
                         <i class="fa fa-lock"></i>
                         <input type="password" placeholder="mot de passe">
                     </div>
-                    <input type="submit" value="Sign up" class="btn solid">
+                    <input type="submit" value="Valider" class="btn solid">
 
-                    <p class="social-text">ou inscrivez-vous sur les plateformes sociales </p>
+                    <p class="social-text">Inscrivez-vous sur les plateformes sociales </p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook"></i>
@@ -84,7 +84,7 @@
                     <h3>Nouveau ici ?</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                         Illum architecto neque rerum.</p>
-                        <button class="btn transparent" id="sign-up-btn">Sign up</button>
+                        <button class="btn transparent" id="sign-up-btn">S'inscrire</button>
                 </div>
                 <img src="images/launch.svg" alt="" class="image">
             </div> 
