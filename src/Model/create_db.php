@@ -1,15 +1,17 @@
 <?php
+set_include_path(".;C:\wamp64\www\projetphp");
+include_once 'src/CONSTANTS.php';
+$username = USER_NAME;
+$db_name = DB_NAME;
+$password = USER_PASSWORD;
+
 try {
-    set_include_path(".;C:\wamp64\www\projetphp");
-    include_once 'src/CONSTANTS.php';
-    $username = USER_NAME;
-    $db_name = DB_NAME;
-    $conn = new PDO('mysql:host='. HOST, ROOT, ROOT_PASSWORD);
-    $conn->exec(
+    $bdd = new PDO('mysql:host='. HOST, ROOT, ROOT_PASSWORD);
+    $bdd->exec(
         "
+        DROP DATABASE IF EXISTS $db_name;
         CREATE DATABASE IF NOT EXISTS $db_name;
-        CREATE USER IF NOT EXISTS '$username'@'localhost';
-        FLUSH PRIVILEGES;
+        USE $db_name;
         DROP TABLE IF EXISTS `departements`;
         CREATE TABLE IF NOT EXISTS `departements` (
           `department_name` varchar(50) NOT NULL,
@@ -53,10 +55,10 @@ try {
           UNIQUE KEY `description` (`description`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
         COMMIT;
-
+        INSERT INTO `etudiant` (`id_student`, `first_name`, `last_name`, `born_date`, `student_email`, `password`, `general_average`, `decision`) VALUES (NULL, 'Kayinda', 'Immaculé', '2018-08-08', 'immakaymw@gmail.com', 'password', '394.485', 'attente');
         ")
-    or die(print_r($conn->errorInfo(), true));
-    echo "connexion reussie";
+    or die(print_r($bdd->errorInfo(), true));
+    echo "creation Kitoko : ";
 }
 catch (PDOException $e){
     die("DB ERROR: " . $e->getMessage());

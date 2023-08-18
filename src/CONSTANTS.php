@@ -5,7 +5,7 @@ define('ROOT', 'root');
 define('ROOT_PASSWORD', '');
 
 define('USER_NAME', 'admin');
-define('USER_PASSWORD', 'vpOxH0hmqClzpflW');
+define('USER_PASSWORD', '');
 define('DB_NAME', 'db_php');
 
 

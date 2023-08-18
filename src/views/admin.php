@@ -1,7 +1,9 @@
 <?php
 set_include_path(".;C:\wamp64\www\projetphp");
 require_once 'src/CONSTANTS.php';
+require_once "src/Model/connection.php";
 $username = USER_NAME;
+echo "bonsoir";
 ?>
 
 <!doctype html>
@@ -14,7 +16,18 @@ $username = USER_NAME;
     <title><?php echo $username ?></title>
 </head>
 <body>
-<?php include_once 'header.php'?>
-Bonsoir
+<?php
+include_once 'header.php';
+$sql = "SELECT * FROM etudiant";
+
+$resultat = $conn->query($sql);
+while($ligne = $resultat->fetch()){
+
+    foreach ($ligne as $item => $value) {
+        echo " $value <br>";
+    }
+}
+?>
+
 </body>
 </html>
