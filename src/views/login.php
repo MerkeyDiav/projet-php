@@ -23,7 +23,7 @@
                 </div>
                 <div class="input-field">
                     <i class="fa fa-lock"></i>
-                    <input type="password" placeholder="Mot de passe ">
+                    <input type="password" placeholder="Mot de passe">
                 </div>
                 <input type="submit" value="Valider" class="btn solid">
                 <p class="social-text">Inscrivez-vous sur les plateformes sociales</p>

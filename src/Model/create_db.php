@@ -58,7 +58,6 @@ try {
         INSERT INTO `etudiant` (`id_student`, `first_name`, `last_name`, `born_date`, `student_email`, `password`, `general_average`, `decision`) VALUES (NULL, 'Kayinda', 'Immaculé', '2018-08-08', 'immakaymw@gmail.com', 'password', '394.485', 'attente');
         ")
     or die(print_r($bdd->errorInfo(), true));
-    echo "creation Kitoko : ";
 }
 catch (PDOException $e){
     die("DB ERROR: " . $e->getMessage());

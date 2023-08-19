@@ -4,7 +4,6 @@ include_once 'create_db.php';
 try {
     $conn = new PDO("mysql:host=". HOST .";dbname=". DB_NAME, ROOT, ROOT_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "connexion reussie, tokoss : ";
 }
 catch (PDOException $e){
     echo 'Erreur: ' . $e->getMessage();
