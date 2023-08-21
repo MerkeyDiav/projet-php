@@ -1,0 +1,99 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  Dim 20 août 2023 à 20:40
+-- Version du serveur :  5.7.26
+-- Version de PHP :  7.2.18
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Base de données :  `db_php`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `departements`
+--
+
+DROP TABLE IF EXISTS `departements`;
+CREATE TABLE IF NOT EXISTS `departements` (
+  `department_name` varchar(50) NOT NULL,
+  `description` varchar(300) NOT NULL,
+  PRIMARY KEY (`department_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='liste tout les departement d''une facultÃ©';
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `etudiant`
+--
+
+DROP TABLE IF EXISTS `etudiant`;
+CREATE TABLE IF NOT EXISTS `etudiant` (
+  `id_student` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `born_date` date NOT NULL,
+  `student_email` varchar(70) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `general_average` double NOT NULL,
+  `decision` varchar(10) NOT NULL DEFAULT 'attente',
+  `date_inscr` datetime DEFAULT CURRENT_TIMESTAMP,
+  `sexe` varchar(1) NOT NULL,
+  `notifications` tinyint(1) NOT NULL DEFAULT '0',
+  `premier_choix` varchar(50) NOT NULL,
+  `second_choix` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_student`),
+  UNIQUE KEY `email_student` (`student_email`),
+  KEY `fk_premierchoix_faculte` (`premier_choix`),
+  KEY `fk_deuxiemechoix_faculté` (`second_choix`),
+  KEY `premier_choix` (`premier_choix`,`second_choix`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `etudiant`
+--
+
+INSERT INTO `etudiant` (`id_student`, `first_name`, `last_name`, `born_date`, `student_email`, `password`, `general_average`, `decision`, `date_inscr`, `sexe`, `notifications`, `premier_choix`, `second_choix`) VALUES
+(1, 'Kayinda', 'ImmaculÃ©', '2018-08-08', 'immakaymw@gmail.com', 'password', 394.485, 'ajournÃ©', '2023-08-20 20:32:55', '', 0, '0', '0'),
+(2, 'Nzuzi ', 'Nehemie', '2003-03-05', 'nehemiediav@gmail.com', 'password', 400, 'admis', '2023-08-20 20:32:55', '', 0, '0', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `faculte`
+--
+
+DROP TABLE IF EXISTS `faculte`;
+CREATE TABLE IF NOT EXISTS `faculte` (
+  `nom_faculte` varchar(50) NOT NULL,
+  `creation_date` date NOT NULL,
+  `departement` varchar(50) NOT NULL,
+  PRIMARY KEY (`nom_faculte`),
+  UNIQUE KEY `departement` (`departement`),
+  KEY `departement_2` (`departement`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `departements`
+--
+ALTER TABLE `departements`
+  ADD CONSTRAINT `departements_ibfk_1` FOREIGN KEY (`department_name`) REFERENCES `etudiant` (`premier_choix`);
+
+--
+-- Contraintes pour la table `faculte`
+--
+ALTER TABLE `faculte`
+  ADD CONSTRAINT `faculte_ibfk_1` FOREIGN KEY (`departement`) REFERENCES `departements` (`department_name`);
+COMMIT;
