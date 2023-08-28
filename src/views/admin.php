@@ -12,18 +12,14 @@ $username = USER_NAME;
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../static_files/admin.css">
+    <script rel="script" defer src="../../static_files/js/admin.js"></script>
+    <link rel="stylesheet" href="../../static_files/css/admin.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title><?php echo $username ?></title>
 </head>
 <body>
 <header>
-    <h1>CODELLA</h1>
-    <div>
-        <h3>boni</h3>
-        <h3>bonii</h3>
-        <h3>boniii</h3>
-        <h3>boniiii</h3>
-    </div>
+    <h1>BACKOFFICE</h1>
 </header>
 <section>
     <form method="post" action="../controller/user_add.php" name="user_add" class="list-item">
@@ -41,10 +37,18 @@ $username = USER_NAME;
                 </div>
             </div>
             <div class='student_decision'>
-                <input type=\"radio\" id=\"element2_admettre\" name=\"$ids[$c]\" value=\"admettre\">
-                <label for=\"element2_accepter\">Admettre</label>
-                <input type=\"radio\" id=\"element2_ajourner\" name=\"$ids[$c]\" value=\"Ajourner\">
-                <label for=\"element2_refuser\">Ajourner</label><br>
+                <div class='admettre_etudiant'>
+                    <input type=\"radio\" id=\"admettre\" name=\"$ids[$c]\" value=\"admettre\">
+                    <label for=\"admettre\">Admettre</label>
+                </div>
+                <div class='ajourner_etudiant'>
+                    <input type=\"radio\" id=\"ajourner\" name=\"$ids[$c]\" value=\"Ajourner\">
+                    <label for=\"ajourner\">Ajourner</label><br>
+                </div>
+                <div class='attente_etudiant'>
+                    <input type=\"radio\" id=\"attente\" checked name=\"$ids[$c]\" value=\"Ajourner\">
+                    <label for=\"attente\">En attente</label><br>
+                </div>
             </div>
         </div>";
         }
@@ -52,6 +56,5 @@ $username = USER_NAME;
         <input type="submit" name="submition" id="submit_adding">
     </form>
 </section>
-
 </body>
 </html>
