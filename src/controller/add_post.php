@@ -2,11 +2,6 @@
 $title_post = $_POST["title_post"];
 $content_post = $_POST["content_post"];
 $author = USER_NAME;
-if (move_uploaded_file($_FILES['bulletin']['tmp_name'], $bulletin)) {
-    echo 'Fichier enregistré avec succès.';
-} else {
-    echo 'Une erreur s\'est produite lors de l\'enregistrement du fichier.';
-}
 
 $post_folder_path = '../../assets/images/posts/';
 createFolder($post_folder_path);
